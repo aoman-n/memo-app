@@ -5,8 +5,6 @@ import {
 import firebase from 'firebase';
 import CircleButton from '../elements/CircleButton';
 
-// this.props.navigation.goBack();
-
 class MemoCreateScreen extends React.Component {
   state = {
     body: '',
@@ -20,12 +18,10 @@ class MemoCreateScreen extends React.Component {
       body: this.state.body,
       createdOn: new Date(),
     })
-      .then((docRef) => {
-        console.log(docRef.id);
-        this.props.navigation.navigate('Home');
+      .then(() => {
+        this.props.navigation.goBack();
       })
-      .catch((error) => {
-        console.log(error);
+      .catch(() => {
       });
   }
 
@@ -53,7 +49,6 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   memoEditInput: {
-    backgroundColor: '#ddd',
     flex: 1,
     paddingTop: 32,
     paddingRight: 16,

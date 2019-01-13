@@ -30,7 +30,6 @@ class MemoEditScreen extends React.Component {
         createdOn: newDate,
       })
       .then(() => {
-        console.log('update success!!');
         const { navigation } = this.props;
         navigation.state.params.returnMemo({
           body: this.state.body,
@@ -39,8 +38,7 @@ class MemoEditScreen extends React.Component {
         });
         navigation.goBack();
       })
-      .catch((error) => {
-        console.log(error);
+      .catch(() => {
       });
   }
 
@@ -68,7 +66,6 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   memoEditInput: {
-    backgroundColor: '#ddd',
     flex: 1,
     paddingTop: 32,
     paddingRight: 16,
