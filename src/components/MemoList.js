@@ -4,7 +4,7 @@ import {
 } from 'react-native';
 
 const dateString = (date) => {
-  const str = date.toDate().toISOString();
+  const str = date.toISOString();
   return str.split('T')[0];
 };
 
