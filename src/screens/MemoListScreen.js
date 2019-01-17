@@ -18,7 +18,6 @@ class MemoListScreen extends React.Component {
       .onSnapshot((snapshot) => {
         const memoList = [];
         snapshot.forEach((doc) => {
-          console.log(doc.data());
           memoList.push({ ...doc.data(), createdOn: doc.data().createdOn.toDate(), key: doc.id });
         });
         this.setState({ memoList });
